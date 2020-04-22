@@ -1,0 +1,39 @@
+@import '~@/styles/base.scss';
+
+.copy {
+  position: relative;
+
+  .popover {
+    display: none;
+    position: absolute;
+    background: $c-primary;
+    color: #fff;
+    top: -30px;
+    padding: 2px 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .popover::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    border: 5px solid;
+    left: 50%;
+    transform: translate(-50%);
+    border-color: $c-primary transparent transparent transparent;
+  }
+
+  .copied {
+    display: block;
+  }
+}
+
+.copy:hover {
+  .popover {
+    display: block;
+  }
+}

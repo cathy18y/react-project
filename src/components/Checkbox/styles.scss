@@ -1,0 +1,33 @@
+@import '~@/styles/base.scss';
+
+.checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:hover {
+  border-color: $c-primary;
+}
+
+.checked {
+  background: $c-primary;
+  border-color: $c-primary;
+  position: relative;
+
+  i, svg {
+    color: #fff;
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size: 10px;
+  }
+}

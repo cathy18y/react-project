@@ -1,0 +1,19 @@
+@import '~@/styles/base.scss';
+
+.page {
+  text-align: right;
+
+  i {
+    margin-left: 15px;
+    color: #bdc3c7;
+  }
+
+  .no-allow {
+    cursor: not-allowed;
+  }
+
+  .allow:hover {
+    cursor: pointer;
+    color: $c-primary;
+  }
+}

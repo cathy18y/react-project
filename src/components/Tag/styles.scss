@@ -1,0 +1,28 @@
+@import '~@/styles/base.scss';
+
+.tag {
+  display: inline-block;
+  padding: 0 8px;
+  color: #ccc;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.default,
+.default:hover {
+  color: $c-primary;
+  border-color: $c-primary;
+}
+
+.warning,
+.warning:hover {
+   color: $c-warning;
+   border-color: $c-warning;
+ }
+
+.danger,
+.danger:hover {
+  color: $c-danger;
+  border-color: $c-danger;
+}

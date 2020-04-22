@@ -1,0 +1,50 @@
+@import '~@/styles/base.scss';
+
+.radio {
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio:hover {
+  border-color: $c-primary;
+}
+
+.radio-checked {
+  border: 1px solid $c-primary;
+}
+
+.checked {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $c-primary;
+  border: none;
+}
+
+.radio-disabled {
+  cursor: not-allowed;
+  background-color: rgba(176, 196, 222, .2);
+}
+
+.radio-disabled:hover {
+  border-color: #ccc;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, .3);
+}
+
