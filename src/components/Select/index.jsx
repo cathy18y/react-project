@@ -20,7 +20,10 @@ class Select extends React.Component {
     this.state = {
       options: props.options,
     };
+    this.timer = null;
     this.originOpts = props.options;
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
   }
 
   componentWillReceiveProps({ options }) {
@@ -37,10 +40,22 @@ class Select extends React.Component {
   }
 
   onChangeSelect(e) {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+
     e.stopPropagation();
     const checkedValue = $(e.target).data('value');
-    this.setState({ checkedValue });
     this.props.onChange(checkedValue);
+    this.setState({ checkedValue }, () => { this.setState({ showSelect: false }); });
+  }
+
+  onFocus() {
+    this.setState({ showSelect: true, options: this.originOpts });
+  }
+
+  onBlur() {
+    this.timer = _.delay(() => this.setState({ showSelect: false }), 100);
   }
 
   render() {
@@ -66,8 +81,8 @@ class Select extends React.Component {
           styleName="selectipt"
           value={checkedValue}
           onChange={e => this.onChangeIpt(e)}
-          onFocus={() => this.setState({ showSelect: true, options: this.originOpts })}
-          onBlur={() => _.delay(() => this.setState({ showSelect: false }), 100)}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
         />
         <Icon type="right" styleName={`arrow ${showSelect ? 'roate' : ''}`} />
         {!content.length && <div styleName="no-data"><Icon type="frown" />&nbsp;暂无数据</div>}

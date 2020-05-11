@@ -13,7 +13,17 @@
 
   .checked {
     color: $c-primary;
-    border-bottom-color: $c-primary;
+    border-bottom: 2px solid $c-primary;
+    animation: animate .5s;
+  }
+
+  @keyframes animate {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 }
 
